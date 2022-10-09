@@ -8,6 +8,8 @@ const command = `git log --since='10:30am' --pretty=format:'{"commit":"%H","abbr
 
 const main = async () => {
     try {
+        const commands = process.argv.slice(2);
+        if (commands.length !== 1) return console.log('Project name not provided. Please use "--pname=your project name" flag to provide me project name.')
         // let's get the git commits
         const commitInfos = await new Promise((resolve, reject) => exec(command, (error, stdout, stderr) => {
             if (!!error || !!stderr) return reject(error || stderr);
