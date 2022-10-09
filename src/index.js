@@ -14,7 +14,7 @@ const main = async () => {
             resolve(stdout.split('\n').map(d => JSON.parse(d)))
         }));
         const content = commitInfos.map(d => ({ task: d.message.split(':')[0], description: d.message.split(':')[1] }));
-        console.log(content)
+        if (!content.length) return console.log('No commits found !');
         const [day, month, dateCount, year] = new Date().toDateString().split(' ');
         const date = `${month} ${dateCount}, ${year}`;
         const html = await writeHtml(date, content);
@@ -23,7 +23,8 @@ const main = async () => {
             if (error) throw new Error(error);
             console.log('Report saved.')
         });
-        handlePdf();
+        await handlePdf();
+        console.log(`Work report generated. Can be found here: ${path.resolve()}/work-report-done.pdf`);
     }
     catch (e) { console.log(e.message) }
 };
