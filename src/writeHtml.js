@@ -1,4 +1,4 @@
-const writeHtml = async (date, data) => {
+const writeHtml = async (date, projectName, data) => {
     return (
         `
         <html>
@@ -298,7 +298,7 @@ const writeHtml = async (date, data) => {
             <p class="c0"><span class="c5"></span></p>
             <p class="c3"><span class="c6">Date: </span><span class="c6">${date}</span></p>
             <p class="c0"><span class="c5"></span></p>
-            <p class="c3"><span class="c1">Project: Ankur Pandey</span></p>
+            <p class="c3"><span class="c1">Project: ${projectName}</span></p>
             <p class="c0"><span class="c1"></span></p>
             <p class="c3"><span class="c2">Today&rsquo;s Work Plan</span></p>
             <ul class="c14 lst-kix_1r2l9uwagom4-0 start">

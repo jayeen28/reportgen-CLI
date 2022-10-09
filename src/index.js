@@ -9,7 +9,8 @@ const command = `git log --since='10:30am' --pretty=format:'{"commit":"%H","abbr
 const main = async () => {
     try {
         const commands = process.argv.slice(2);
-        if (commands.length !== 1) return console.log('Project name not provided. Please use "--pname=your project name" flag to provide me project name.')
+        if (commands.length !== 1) return console.log('Project name not provided. Please use --pname="your project name" flag to provide me project name.')
+        const projectName = commands[0].split('=')[1];
         // let's get the git commits
         const commitInfos = await new Promise((resolve, reject) => exec(command, (error, stdout, stderr) => {
             if (!!error || !!stderr) return reject(error || stderr);
@@ -19,7 +20,7 @@ const main = async () => {
         if (!content.length) return console.log('No commits found !');
         const [day, month, dateCount, year] = new Date().toDateString().split(' ');
         const date = `${month} ${dateCount}, ${year}`;
-        const html = await writeHtml(date, content);
+        const html = await writeHtml(date, projectName, content);
         const buffer = new Buffer.alloc(html.length, html.toString(), 'utf-8');
         fs.writeFileSync(path.resolve() + '/work-report.html', buffer, (error) => {
             if (error) throw new Error(error);
