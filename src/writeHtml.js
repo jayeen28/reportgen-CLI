@@ -311,17 +311,22 @@ const writeHtml = async (date, projectName, data) => {
         )).join('\n')}
             </ul>
             <p class="c0"><span class="c5"></span></p>
-            <p class="c3"><span class="c8 c10">Completed Tasks</span></p>
-            ${data.map(({ task, description }) => description ? (
+            <p class="c3"><span class="c8 c10">Description</span></p>
+            ${data.filter(d => d.description).length === 0 ? (`<p class="c3">
+                    <span class="c5">
+                        No description.
+                    </span>
+                </p>`
+        ) : data.map(({ task, description }) => description ? (
             `<br/>
             <p class="c3">
-                    <span class="c5">
-                        ${task}:
-                    </span>
-                </p>
-                <p class="c3">
-                    <span class="c6">${description}</span>
-                </p>`
+                <span class="c5">
+                    ${task}:
+                </span>
+            </p>
+            <p class="c3">
+                <span class="c6">${description}</span>
+            </p>`
         ) : '').join('\n')}
             <p class="c0"><span class="c8 c10"></span></p>
             <p class="c3"><span class="c8 c10">Plan for Tomorrow</span></p>
