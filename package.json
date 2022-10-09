@@ -6,6 +6,9 @@
   "bin": {
     "reportgen": "./src/index.js"
   },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
   "author": {
     "name": "MD. Jayeen Bin Alam",
     "email": "jayeen6783@gmail.com",
@@ -15,7 +18,10 @@
     "type": "git",
     "url": "https://github.com/jayeen28/work-report-generator.git"
   },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
   "dependencies": {
-    "pdf-lib": "^1.17.1"
+    "puppeteer": "^18.2.1"
   }
 }
