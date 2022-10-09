@@ -14,6 +14,7 @@ const main = async () => {
             resolve(stdout.split('\n').map(d => JSON.parse(d)))
         }));
         const content = commitInfos.map(d => ({ task: d.message.split(':')[0], description: d.message.split(':')[1] }));
+        console.log(content)
         const [day, month, dateCount, year] = new Date().toDateString().split(' ');
         const date = `${month} ${dateCount}, ${year}`;
         const html = await writeHtml(date, content);

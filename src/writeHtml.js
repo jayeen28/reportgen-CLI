@@ -313,9 +313,10 @@ const writeHtml = async (date, data) => {
             <p class="c0"><span class="c5"></span></p>
             <p class="c3"><span class="c8 c10">Completed Tasks</span></p>
             ${data.map(({ task, description }) => description ? (
-            `<p class="c3">
+            `<br/>
+            <p class="c3">
                     <span class="c5">
-                        ${task}
+                        ${task}:
                     </span>
                 </p>
                 <p class="c3">
