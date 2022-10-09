@@ -8,7 +8,6 @@ const handlePdf = async () => {
         await page.goto('file://' + path.resolve() + '/work-report.html');
         await page.pdf({
             path: 'work-report-done.pdf',
-            margin: { top: '100px', right: '50px', bottom: '100px', left: '50px' },
             printBackground: true,
             format: 'A4',
         });
