@@ -14,5 +14,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jayeen28/work-report-generator.git"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
   }
 }
