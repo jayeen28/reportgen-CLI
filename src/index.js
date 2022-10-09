@@ -4,7 +4,7 @@ const handlePdf = require('./handlePdf');
 const fs = require('fs');
 const path = require('path');
 const writeHtml = require('./writeHtml');
-const command = `git log --since='10:30am' --pretty=format:'{"commit":"%H","abbreviated_commit":"%h","tree":"%T","abbreviated_tree":"%t","refs":"%D","message":"%s","sanitized_message_line":"%f","author":{"name":"%aN","email":"%aE","date":"%aD"}}'`;
+const command = `git log --since='12:00am' --pretty=format:'{"commit":"%H","abbreviated_commit":"%h","tree":"%T","abbreviated_tree":"%t","refs":"%D","message":"%s","sanitized_message_line":"%f","author":{"name":"%aN","email":"%aE","date":"%aD"}}'`;
 
 const main = async () => {
     try {
