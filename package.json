@@ -1,6 +1,18 @@
 {
   "name": "work-report-generator",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "./src/index.js",
+  "license": "MIT",
+  "bin": {
+    "reportgen": "./src/index.js"
+  },
+  "author": {
+    "name": "MD. Jayeen Bin Alam",
+    "email": "jayeen6783@gmail.com",
+    "url": "https://github.com/jayeen28"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayeen28/work-report-generator.git"
+  }
 }
