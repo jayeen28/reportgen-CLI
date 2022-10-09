@@ -1,8 +1,8 @@
 I have created this cli to generate my daily work report at office. Must follow these four steps for generating your work report.
 1. Installation(npm/yarn):
-    >```npm i -g work-report-generator```
+    >```npm i -g reportgen```
 
-    >```yarn add global work-report-generator```
+    >```yarn add global reportgen```
 
 2. Firstly, you have to be in the directory of the project and that directory must be connected with github.
 
