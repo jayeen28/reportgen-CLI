@@ -13,7 +13,8 @@ const main = async () => {
         const projectName = commands[0].split('=')[1];
         // let's get the git commits
         const commitInfos = await new Promise((resolve, reject) => exec(command, (error, stdout, stderr) => {
-            if (!!error || !!stderr) return reject(error || stderr);
+            if (!!error || !!stderr) return reject({ message: error || stderr });
+            if (!stdout.length) return reject({ message: 'No commits found.' });
             resolve(stdout.split('\n').map(d => JSON.parse(d)))
         }));
         const content = commitInfos.map(d => ({ task: d.message.split(':')[0], description: d.message.split(':')[1] }));
