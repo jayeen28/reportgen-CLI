@@ -17,7 +17,7 @@ const main = async () => {
             if (!stdout.length) return reject({ message: 'No commits found.' });
             resolve(stdout.split('\n').map(d => JSON.parse(d)))
         }));
-        const content = commitInfos.map(d => ({ task: d.message.split(':')[0], description: d.message.split(':')[1] }));
+        const content = commitInfos.filter(({ message }) => message.split(':').length > 1).map(({ message }) => ({ task: message.split(':')[0], description: message.split(':')[1] }))
         if (!content.length) return console.log('No commits found !');
         const [day, month, dateCount, year] = new Date().toDateString().split(' ');
         const date = `${month} ${dateCount}, ${year}`;
