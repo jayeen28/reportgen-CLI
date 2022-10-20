@@ -1,6 +1,6 @@
 {
   "name": "reportgen",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "./src/index.js",
   "license": "MIT",
   "bin": {
@@ -16,14 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jayeen28/work-report-generator.git"
+    "url": "https://github.com/jayeen28/reportgen-CLI"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
   },
   "dependencies": {
-    "global": "^4.4.0",
-    "puppeteer": "^18.2.1",
-    "reportgen": "^1.0.0"
+    "puppeteer": "^18.2.1"
   }
 }
