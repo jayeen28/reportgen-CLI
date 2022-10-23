@@ -1,6 +1,6 @@
 I created this cli to generate my daily work report at office. Must follow these four steps for generating your work report.
 1. Installation (npm/yarn):
-    >```npm i -g reportgen```
+    >```npm i reportgen --location=global```
 
     >```yarn add global reportgen```
 
